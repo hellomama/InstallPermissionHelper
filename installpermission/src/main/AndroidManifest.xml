@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tony.installpermission">
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+
+    <application>
+        <activity android:name=".MainActivity"/>
+        <provider
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:authorities="com.tony.installpermission.fileProvider"
+            android:name="android.support.v4.content.FileProvider">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"
+                />
+        </provider>
+    </application>
+
+</manifest>
